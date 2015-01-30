@@ -11,4 +11,10 @@ describe Jobs_list do
 		expect(Jobs_list.empty_sequence('')).to eq ''		
 		end
 	end
+
+	context "given a jobs list with one object" do 
+		it "should return a sequence of jobs containing one object" do 
+			expect(Jobs_list.containing_sequence("a =>")).to eq 'a'
+		end
+	end
 end
