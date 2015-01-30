@@ -1,6 +1,6 @@
 class Jobs_list
 
-	def empty_sequence(jobs)
+	def self.empty_sequence(jobs)
 		''
 	end
 end 
