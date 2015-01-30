@@ -7,7 +7,8 @@ require 'jobs_list'
 
 describe Jobs_list do
 	context "given an empty list of jobs" do 
-		it "should return an empty sequence of jobs" do 		
+		it "should return an empty sequence of jobs" do 
+		expect(Jobs_list.empty_sequence('')).to eq ''		
 		end
 	end
 end
