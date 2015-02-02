@@ -1,9 +1,9 @@
 class JobsList
-	# attr_reader :sequence
+	attr_reader :list
 
-	# def initialize(sequence)
-	# 	@sequence = Sequence
-	# end
+	def initialize
+		@list = "a"
+	end
 
 	# def result
 	# 	sequence
@@ -13,7 +13,11 @@ class JobsList
 		''
 	end
 
-	def self.containing_sequence(jobs)
-		'a'
-	end
+	# def sequence
+	# 	@list
+	# end
+
+	# def self.containing_sequence(jobs)
+	# 	@list
+	# end
 end 

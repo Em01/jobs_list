@@ -15,7 +15,7 @@ describe JobsList do
 
 	context "given a jobs list with one object" do 
 		it "should return a sequence of jobs containing one object" do 
-			expect(JobsList.containing_sequence("a =>")).to eq 'a'
+			expect(JobsList.new.list).to eq 'a'
 		end
 	end
 end
