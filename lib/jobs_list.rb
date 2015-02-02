@@ -1,4 +1,13 @@
-class Jobs_list
+class JobsList
+	# attr_reader :sequence
+
+	# def initialize(sequence)
+	# 	@sequence = Sequence
+	# end
+
+	# def result
+	# 	sequence
+	# end
 
 	def self.empty_sequence(jobs)
 		''
