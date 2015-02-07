@@ -9,13 +9,18 @@ require 'jobs_list'
 describe JobsList do
 	context "given an empty list of jobs" do 
 		it "should return an empty sequence of jobs" do 
-		expect(JobsList.empty_sequence('')).to eq ''		
+		expect(JobsList.sequence('')).to eq []		
 		end
 	end
 
 	context "given a jobs list with one object" do 
 		it "should return a sequence of jobs containing one object" do 
-			expect(JobsList.new.list).to eq 'a'
+			expect(JobsList.sequence 'a =>').to eq ['a']
 		end
 	end
+
+# 	context "given a jobs list with multiple objects" do 
+# 		it "should return a sequence of jobs containing multiple objects" do 
+# 			expect(Jobs)
+# end
 end
