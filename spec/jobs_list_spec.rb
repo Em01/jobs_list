@@ -19,8 +19,12 @@ describe JobsList do
 		end
 	end
 
-# 	context "given a jobs list with multiple objects" do 
-# 		it "should return a sequence of jobs containing multiple objects" do 
-# 			expect(Jobs)
-# end
+	context "given a jobs list with multiple objects" do 
+		it "should return a sequence of jobs with multiple jobs" do 
+			jobs = "a =>
+					b =>
+					c =>"
+			expect(JobsList.sequence).to eql ['a', 'b', 'c']
+		end
+	end
 end
