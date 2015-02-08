@@ -7,24 +7,8 @@
 require 'jobs_list'
 
 describe JobsList do
-	context "given an empty list of jobs" do 
-		it "should return an empty sequence of jobs" do 
-		expect(JobsList.sequence('')).to eq []		
-		end
-	end
 
-	context "given a jobs list with one object" do 
-		it "should return a sequence of jobs containing one object" do 
-			expect(JobsList.sequence 'a =>').to eq ['a']
-		end
-	end
-
-	context "given a jobs list with multiple objects" do 
-		it "should return a sequence of jobs with multiple jobs" do 
-			jobs = "a =>
-					b =>
-					c =>"
-			expect(JobsList.sequence).to eql ['a', 'b', 'c']
-		end
+	it "should return an empty sequence of jobs if a blank hash was supplied" do 
+		expect(JobsList.sequence({})).to eq []		
 	end
 end
