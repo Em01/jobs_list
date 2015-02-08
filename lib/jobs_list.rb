@@ -8,6 +8,6 @@ class JobsList
 				array = array + [k]
 			end
 			array = array + v.map{|a| a[0]}
-		end.flatten
+		end.flatten.uniq.compact
 	end
 end 
