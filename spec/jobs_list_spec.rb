@@ -15,4 +15,8 @@ describe JobsList do
 	it "should return an single job character if a single jobs was supplied" do 
 		expect(JobsList.sequence({'a' => nil})).to eq ['a']		
 	end
+
+	it "should return multiple jobs characters if a multiple jobs were supplied" do 
+		expect(JobsList.sequence({'a' => nil, 'b' => nil, 'c' => nil})).to eq ['a', 'b', 'c']		
+	end
 end
