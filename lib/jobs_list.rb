@@ -7,7 +7,7 @@ class JobsList
 			if k 
 				array = array + [k]
 			end
-			array + v.map{|a| a[1]}
+			array = array + v.map{|a| a[0]}
 		end.flatten
 	end
 end 
