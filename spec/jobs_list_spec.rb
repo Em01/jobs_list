@@ -23,4 +23,9 @@ describe JobsList do
 	it "should return ordered multiple jobs with the dependency if multiple jobs with single dependency were supplied" do 
 		expect(JobsList.sequence({'a' => nil, 'b' => 'c', 'c' => nil})).to eq ['a', 'c', 'b']		
 	end
+
+	it "should return all six jobs" do 
+		puts JobsList.sequence({'a' => nil, 'b' => 'c', 'c' => 'f', 'd' => 'a', 'e' => 'b', 'f' => nil})
+		expect(JobsList.sequence({'a' => nil, 'b' => 'c', 'c' => 'f', 'd' => 'a', 'e' => 'b', 'f' => nil})).to include(*['a', 'b', 'c', 'd', 'e', 'f'])
+	end
 end
