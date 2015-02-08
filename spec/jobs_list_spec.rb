@@ -19,4 +19,8 @@ describe JobsList do
 	it "should return multiple jobs characters if a multiple jobs were supplied" do 
 		expect(JobsList.sequence({'a' => nil, 'b' => nil, 'c' => nil})).to eq ['a', 'b', 'c']		
 	end
+
+	it "should return ordered multiple jobs with the dependency if multiple jobs with single dependency were supplied" do 
+		expect(JobsList.sequence({'a' => nil, 'b' => 'c', 'c' => nil})).to eq ['a', 'c', 'b']		
+	end
 end
