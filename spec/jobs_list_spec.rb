@@ -11,4 +11,8 @@ describe JobsList do
 	it "should return an empty sequence of jobs if a blank hash was supplied" do 
 		expect(JobsList.sequence({})).to eq []		
 	end
+
+	it "should return an single job character if a single jobs was supplied" do 
+		expect(JobsList.sequence({'a' => nil})).to eq ['a']		
+	end
 end
