@@ -37,4 +37,8 @@ describe JobsList do
 		expect(JobsList.sequence({'a' => nil, 'b' => 'c', 'c' => 'f', 'd' => 'a', 'e' => 'b', 'f' => nil})).to have_order('b', 'e')
 		expect(JobsList.sequence({'a' => nil, 'b' => 'c', 'c' => 'f', 'd' => 'a', 'e' => 'b', 'f' => nil})).to have_order('a', 'd')
     end
+
+    it "should raise an error when self referencing dependency" do 
+		expect{JobsList.sequence({'a' => nil, 'b' => nil, 'c' => 'c'})}.to raise_error RuntimeError, "Invalid. Self dependency"
+	end
 end
