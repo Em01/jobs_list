@@ -6,13 +6,13 @@ class JobsList
 				raise "Invalid. Self dependency"
 			end
 		end
-		grouped_jobs = jobs.group_by{|k, v| v}
-		grouped_jobs.map do |k,v|
+		grouped_jobs = jobs.group_by{|key, value| value}
+		grouped_jobs.map do |key,value|
 			array = []
-			if k 
-				array = array + [k]
+			if key 
+				array = array + [key]
 			end
-			array = array + v.map{|a| a[0]}
+			array = array + value.map{|a| a[0]}
 		end.flatten.uniq.compact
 	end
 end
