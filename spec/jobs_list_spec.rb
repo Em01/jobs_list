@@ -5,6 +5,7 @@
 
 
 require 'jobs_list'
+require './spec/matcher'
 
 describe JobsList do
 
@@ -28,4 +29,12 @@ describe JobsList do
 		puts JobsList.sequence({'a' => nil, 'b' => 'c', 'c' => 'f', 'd' => 'a', 'e' => 'b', 'f' => nil})
 		expect(JobsList.sequence({'a' => nil, 'b' => 'c', 'c' => 'f', 'd' => 'a', 'e' => 'b', 'f' => nil})).to include(*['a', 'b', 'c', 'd', 'e', 'f'])
 	end
+
+	it "should return an ordered sequence of the six jobs" do 
+		expect(JobsList.sequence({'a' => nil, 'b' => 'c', 'c' => 'f', 'd' => 'a', 'e' => 'b', 'f' => nil})).to include(*['a', 'b', 'c', 'd', 'e', 'f'])
+		expect(JobsList.sequence({'a' => nil, 'b' => 'c', 'c' => 'f', 'd' => 'a', 'e' => 'b', 'f' => nil})).to have_order('f', 'c')
+		expect(JobsList.sequence({'a' => nil, 'b' => 'c', 'c' => 'f', 'd' => 'a', 'e' => 'b', 'f' => nil})).to have_order('c', 'b')
+		expect(JobsList.sequence({'a' => nil, 'b' => 'c', 'c' => 'f', 'd' => 'a', 'e' => 'b', 'f' => nil})).to have_order('b', 'e')
+		expect(JobsList.sequence({'a' => nil, 'b' => 'c', 'c' => 'f', 'd' => 'a', 'e' => 'b', 'f' => nil})).to have_order('a', 'd')
+    end
 end
