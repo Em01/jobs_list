@@ -41,4 +41,8 @@ describe JobsList do
     it "should raise an error when self referencing dependency" do 
 		expect{JobsList.sequence({'a' => nil, 'b' => nil, 'c' => 'c'})}.to raise_error RuntimeError, "Invalid. Self dependency"
 	end
+
+	it "should raise an error when circular dependency" do 
+		expect{JobsList.sequence({'a' => nil, 'b' => 'c', 'c' => 'f', 'd' => 'a', 'e' => nil, 'f' => 'b'})}.to raise_error("Invalid. Circular dependency")
+	end
 end
